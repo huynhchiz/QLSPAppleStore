@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý sản phẩm</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bigForm">
+        <!-- Products management -->
+        <div id="formManager" class="productform">
+            <div class="title">
+                <h4>Quản lý sản phẩm</h4>
+            </div>
+
+            
+            <div class="mgbt8 mgl8">
+                <!-- <button id="showAllBtn" type="button">Hiển thị tất cả sản phẩm</button> -->
+                <label id="searchTitle" class="mgl8" for="searchProduct">Tìm sản phẩm: </label>
+                <input type="text" name="product search" id="productSearch"
+                placeholder="Nhập tên sản phẩm cần tìm">
+                <button id="searchBtn" type="button" >Tìm</button>
+                <button id="cancelSearchBtn" type="button" >Hủy</button>
+
+                <button id="moveToAddBtn" type="button">Thêm sản phẩm mới</button>
+            </div>
+
+            <table class="table mgbt8">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tên</th>
+                        <th>Hình ảnh</th>
+                        <th>Loại</th>
+                        <th>Thông tin</th>
+                        <th>Đơn giá</th>
+                        <th>Số lượng</th>
+                        <th>Thành tiền</th>
+                        <!-- <th>Chức năng</th> -->
+                    </tr>
+                </thead>
+
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Input detail & information product -->
+        <div id="formEdit" class="productform">
+            <div class="title">
+                <h4 id="title2">Thêm sản phẩm</h4>
+            </div>
+
+            <form method="post">
+
+                <div class="mgbt8 mgl8">
+                    <label for="productType">Loại sản phẩm: </label>
+                    <!-- <input type="text" name="product type" id="productType"> -->
+                    <select name="product type" id="productType">
+                        <option value="0" disabled selected hidden>Chọn loại sản phẩm</option>
+                        <option value="1">iPhone</option>
+                        <option value="2">iPad</option>
+                        <option value="3">Macbook</option>
+                        <option value="4">Mac Mini</option>
+                        <option value="5">Apple Watch</option>
+                        <option value="6">iMac</option>
+                        <option value="7">Airpods</option>
+                    </select>
+                    <img id="showImg" src="./img/applelogo.png">
+                </div>
+                
+                <div class="mgbt8 mgl8">
+                    <label for="productId">Mã sản phẩm: </label>
+                    <input type="text" name="product id" id="productId"
+                    placeholder="IP14PM128Gold">
+                    
+                </div>
+
+                <div class="mgbt8 mgl8">
+                    <label for="productName">Tên sản phẩm: </label>
+                    <input type="text" name="product name" id="productName"
+                    placeholder="Iphone 14 Pro Max 256GB Gold">
+                </div>
+
+                <div class="mgbt8 mgl8">
+                    <label for="productImg">Hình ảnh (nhập đường dẫn): </label>
+                    <input type="text" name="product img" id="productImg"
+                    placeholder="./img/ip14PMgold.png">
+                </div>
+
+                
+
+                <div class="mgbt8 mgl8">
+                    <label for="productDetail">Thông tin sản phẩm: </label>
+                    <input type="text" name="product detail" id="productDetail">
+                </div>
+
+                <div class="mgbt8 mgl8">
+                    <label for="productPrice">Giá sản phẩm: </label>
+                    <input type="number" name="product price" id="productPrice"
+                    onkeyup="updateTotalPrice()">
+                </div>
+
+                <div class="mgbt8 mgl8">
+                    <label for="productQuantity">Số lượng sản phẩm: </label>
+                    <input type="number" name="product quantity" id="productQuantity"
+                    onkeyup="updateTotalPrice()">
+                </div>
+
+                <div class="mgbt8 mgl8">
+                    <label for="productTotal">Thành tiền: </label>
+                    <input type="number" name="product total" id="productTotal" disabled="true">
+                </div>
+
+                <div class="mgbt8 mgl8">
+                    <label></label>
+                    <button type="reset" onclick="">Reset</button>
+                    <button id="addBtn" type="button" onclick="">Thêm</button>
+                    <button id="deleteBtn" type="button" onclick="">Xóa</button>
+                    <button id="updateBtn" type="button" onclick="">Cập nhật</button>
+                    <button id="cancelBtn" type="button" onclick="">Hủy</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    
+
+
+
+    <script src="javascript4.js"></script>
+
+</body>
+</html>
